@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Everest Puzzles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      html {
+        background-color: rgb(20, 20, 20);
+      }
+      h1 {
+        font-family: "Oswald";
+        font-size: 80px;
+        text-decoration: underline;
+        text-decoration-thickness: 8px;
+        text-underline-offset: 4px;
+        text-decoration-color: LightSeaGreen;
+      }
+      h2 {
+        font-family: "Oswald";
+        font-size: 50px;
+        text-decoration: underline;
+        text-decoration-thickness: 4px;
+        text-underline-offset: 2px;
+      }
+      p {
+        font-family: "Roboto";
+        font-size: 16px;
+      }
+      .card {
+        --bg: #e8e8e8;
+        --contrast: #e2e0e0;
+        --grey: #93a1a1;
+        position: relative;
+        padding: 9px;
+        background-color: var(--bg);
+        border-radius: 35px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      }
+
+      .card-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-conic-gradient(var(--bg) 0.0000001%, var(--grey) 0.000104%) 60% 60%/600% 600%;
+        filter: opacity(10%) contrast(105%);
+      }
+
+      .card-inner {
+        width: 100%;
+        min-height: 200px;
+        padding: 10px;
+        box-sizing: border-box;
+        /* Content styling */
+        font-size: 24px;
+        font-weight: 900;
+        color: rgb(70, 70, 70);
+        text-align: center;
+        font-family: monospace;
+      }
+
+      /* Card used for dark parts */
+      .basic-card {
+        background-color: rgb(40, 40, 40);
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 3px -3px 12px 2px rgb(40, 40, 40);
+      }
+
+      .footer-card {
+        background-color: MediumAquamarine;
+        font-family: sans-serif;
+        font-size: 12px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="basic-card"><h1> Everest Puzzles </h1></div>
+    <div class="basic-card display: flex; justify-content: center;">
+      <p style="text-align: center;"><br> Here at Everest Puzzles, we aim to create fun games and experiences to relax and sharpen skills.</p>
+      <h2>Featured Apps</h2>
+      <div class="card">
+        <div class="card-overlay"></div>
+        <div class="card-inner">
+          <span style="font-size: 30px">Skill Sudoku</span><br><small><span style="color: black;">Enjoy classic Sudoku in a clean, distraction-free design built for focus and flow.<br></span></small>
+          <a href="https://play.google.com/store/apps/details?id=com.krish.skillsudoku&hl=en_GB&pli=1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            style="height:60px;margin:5px;">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-card">
+      <b>Everest Puzzles</b><br>
+      <b>E-mail : </b>krl.developer1@gmail.com
+    </div>
+  </body>
+</html>
