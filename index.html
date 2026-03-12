@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="dbGVjRHwz0TLsbcTTrkSU8XyVQTYcrqPcztXuCtZaCU" />
-    
+
     <title>Everest Puzzles</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
             font-family: 'Inter', system-ui, sans-serif;
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -84,6 +84,15 @@
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: 2.8rem;
+            font-weight: 700;
+            color: white;
+            margin: 4rem 0 2.5rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
             font-weight: 700;
             color: white;
             margin: 4rem 0 2.5rem;
@@ -169,7 +178,6 @@
         }
 
         footer {
-            margin-top: 8rem;
             padding: 3rem 1.5rem 2rem;
             text-align: center;
             border-top: 1px solid var(--surface-2);
@@ -186,6 +194,89 @@
         footer a:hover {
             text-decoration: underline;
             color: #5eead4;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--surface);
+            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin: 0 1rem;
+        }
+
+        .navbar a,
+        .navbar p {
+            display: flex;
+            color: white;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            padding: 0.8rem 1.2rem;
+            transition: all 0.3s;
+            align-items: center;
+        }
+
+        .navbar p {
+            background: var(--bg);
+        }
+
+        .navbar a:hover {
+            color: var(--accent);
+            background: var(--surface-2);
+            border-radius: 12px;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            margin-right: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .navbar li {
+                margin: 0.5rem;
+            }
+
+            header {
+                padding: 8rem 1.5rem 9rem;
+            }
+
+            h1 {
+                font-size: clamp(3.2rem, 11vw, 5.5rem);
+            }
+
+            .container {
+                padding: 2rem 1rem 5rem;
+            }
+
+            .navbar a,
+            .navbar p {
+                font-size: 1.05rem;
+                padding: 0.5rem 0.9rem;
+            }
         }
 
         @media (max-width: 600px) {
@@ -213,15 +304,14 @@
 <body>
 
     <div class="container">
-
         <header>
-            <h1>Everest<span> Puzzles</span></h1>
+            <h1>Everest<span style="color: var(--accent)"> Puzzles</span></h1>
             <p class="tagline">
                 Creating thoughtful apps, games and experiences that help you relax, focus, and sharpen your mind.
             </p>
         </header>
 
-        <h2>Featured Apps</h2>
+        <h2 id="featured-apps">Featured Apps</h2>
 
         <div class="apps-grid">
 
@@ -240,15 +330,52 @@
                 </div>
             </div>
         </div>
+        <br>
+        <h3>Coming Soon...</h3><br>
+        <div class="apps-grid">
+            <div class="app-card">
+                <div class="app-content">
+                    <div class="app-logo">
+                        <img src="https://placehold.co/512x512?text=?">
+                    </div>
+                    <div class="app-title">Rapid Reader</div>
+                    <p class="app-desc">
+                        Train your brain with RSVP (Rapid Serial Visual Presentation) — words flash one-by-one to boost reading speed and comprehension. Read articles, books, PDFs faster without losing focus. Minimal design, offline support.
+                    </p>
+                    <a href="" class="store-badge" target="_blank" rel="noopener">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+        </div>
 
+        <!-- About Section -->
+        <div style="margin-top: 30px; border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent);">
+            <h2 id="about-us">About Everest Puzzles</h2>
+            <p style="max-width: 700px; margin: 0 auto 2rem; text-align: center; color: var(--text-sec); font-size: 1.1rem;">
+                Hi, I'm the solo developer behind Everest Puzzles. I create minimal, mindful mobile experiences—no interrupting ads, no unnecessary features, just beautifully simple apps and games.
+                Inspired by classic puzzles, every app is designed for deep concentration, mental clarity, and pure focus.
+            </p>
+        </div>
     </div>
 
-    <footer>
-        <p><strong>Everest Puzzles</strong><br>
+
+
+    <footer id="contact-us">
+        <p>Contact Us at<br><strong>Everest Puzzles</strong><br>
             <a href="mailto:krl.developer1@gmail.com">krl.developer1@gmail.com</a>
         </p>
     </footer>
-
+    <div class="navbar">
+        <ul>
+            <li>
+                <p>Everest<span style="color: var(--accent)"> Puzzles</span></p>
+            </li>
+            <li><a href="#featured-apps">Featured Apps</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+    </div>
 </body>
 
 </html>
