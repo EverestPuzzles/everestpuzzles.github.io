@@ -1,381 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="dbGVjRHwz0TLsbcTTrkSU8XyVQTYcrqPcztXuCtZaCU" />
+    <meta
+      name="google-site-verification"
+      content="dbGVjRHwz0TLsbcTTrkSU8XyVQTYcrqPcztXuCtZaCU"
+    />
 
     <title>Everest Puzzles</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"
+    />
+  </head>
 
-    <style>
-        :root {
-            --bg: #0f1115;
-            --surface: #16181f;
-            --surface-2: #1e212b;
-            --text: #e2e8f0;
-            --text-sec: #94a3b8;
-            --accent: #2dd4bf;
-            --accent-dim: #0f766e;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            min-height: 100%;
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', system-ui, sans-serif;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem 6rem;
-        }
-
-        header {
-            position: relative;
-            text-align: center;
-            margin-bottom: 5rem;
-            padding: 12rem 2rem 12rem;
-            background: var(--bg) url('https://play-lh.googleusercontent.com/LMDs_vJP-gpUxQ6JbaKrohPrgesqFaukgXSXYJQ12qegTd7KudieOyLf1Fq3rpS2cfM=w3840-h2160-rw') center/cover no-repeat;
-            border-radius: 0 0 32px 32px;
-            /* Soft curve at bottom */
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(15, 17, 21, 0.65), rgba(15, 17, 21, 0.9) 60%);
-            /* Stronger tint since the image has bright greens/blues — prevents text washout */
-            z-index: 1;
-        }
-
-        header>* {
-            position: relative;
-            z-index: 2;
-        }
-
-        h1 {
-            text-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
-            font-size: clamp(4rem, 14vw, 8rem);
-            font-family: "Playfair Display";
-        }
-
-        .tagline {
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-            font-size: 1.5rem;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: white;
-            margin: 4rem 0 2.5rem;
-            text-align: center;
-        }
-
-        h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
-            font-weight: 700;
-            color: white;
-            margin: 4rem 0 2.5rem;
-            text-align: center;
-        }
-
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
-        .app-card {
-            background: var(--surface);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--surface-2);
-            transition: all 0.25s ease;
-            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.4);
-        }
-
-        .app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.5);
-            border-color: var(--accent-dim);
-        }
-
-        .app-content {
-            padding: 2.5rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .app-logo {
-            width: 96px;
-            height: 96px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow:
-                0 8px 24px rgba(0, 0, 0, 0.4),
-                0 2px 8px rgba(0, 0, 0, 0.3);
-            margin: 0 auto 1.4rem;
-            display: block;
-            transition: transform 0.25s ease;
-        }
-
-        .app-card:hover .app-logo {
-            transform: scale(1.08);
-        }
-
-        .app-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .app-title {
-            font-size: 1.85rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .app-desc {
-            font-size: 1.05rem;
-            color: var(--text-sec);
-            margin-bottom: 1.8rem;
-            line-height: 1.65;
-        }
-
-        .store-badge {
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-
-        .store-badge:hover {
-            transform: scale(1.06);
-        }
-
-        .store-badge img {
-            height: 64px;
-            width: auto;
-        }
-
-        footer {
-            padding: 3rem 1.5rem 2rem;
-            text-align: center;
-            border-top: 1px solid var(--surface-2);
-            color: var(--text-sec);
-            font-size: 0.95rem;
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-            color: #5eead4;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            background: var(--surface);
-            border-bottom: 2px solid var(--accent);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .navbar li {
-            margin: 0 1rem;
-        }
-
-        .navbar a,
-        .navbar p {
-            display: flex;
-            color: white;
-            text-decoration: none;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            padding: 0.8rem 1.2rem;
-            transition: all 0.3s;
-            align-items: center;
-        }
-
-        .navbar p {
-            background: var(--bg);
-        }
-
-        .navbar a:hover {
-            color: var(--accent);
-            background: var(--surface-2);
-            border-radius: 12px;
-        }
-
-        .navbar .logo {
-            font-weight: bold;
-            margin-right: 2rem;
-        }
-
-        @media (max-width: 768px) {
-            .navbar ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .navbar li {
-                margin: 0.5rem;
-            }
-
-            header {
-                padding: 8rem 1.5rem 9rem;
-            }
-
-            h1 {
-                font-size: clamp(3.2rem, 11vw, 5.5rem);
-            }
-
-            .container {
-                padding: 2rem 1rem 5rem;
-            }
-
-            .navbar a,
-            .navbar p {
-                font-size: 1.05rem;
-                padding: 0.5rem 0.9rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 3rem 1.2rem 5rem;
-            }
-
-            h1 {
-                font-size: clamp(3rem, 10vw, 5rem);
-            }
-
-            h2 {
-                font-size: 2.4rem;
-            }
-
-            .app-logo {
-                width: 88px;
-                height: 88px;
-                border-radius: 22px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
+  <body>
     <div class="container">
-        <header>
-            <h1>Everest<span style="color: var(--accent)"> Puzzles</span></h1>
-            <p class="tagline">
-                Creating thoughtful apps, games and experiences that help you relax, focus, and sharpen your mind.
-            </p>
-        </header>
+      <header>
+        <h1>Everest<span style="color: var(--accent)"> Puzzles</span></h1>
+        <p class="tagline">
+          Creating thoughtful apps, games and experiences that help you relax,
+          focus, and sharpen your mind.
+        </p>
+      </header>
 
-        <h2 id="featured-apps">Featured Apps</h2>
+      <h2 id="featured-apps">Featured Apps</h2>
 
-        <div class="apps-grid">
-
-            <div class="app-card">
-                <div class="app-content">
-                    <div class="app-logo">
-                        <img src="https://play-lh.googleusercontent.com/NwyaOed-PkCeQTjPtVj1I7zG62GM6DydMEllmFa0b9XXj2BlN_TraAVYO-V7wIe2wxOdKFVBklnFgoj_mtf0gdY=w512-rw" alt="Skill Sudoku App Icon">
-                    </div>
-                    <div class="app-title">Skill Sudoku</div>
-                    <p class="app-desc">
-                        Classic Sudoku in a clean, distraction-free design — built for deep focus and flow state.
-                    </p>
-                    <a href="https://play.google.com/store/apps/details?id=com.krish.skillsudoku&hl=en_GB&pli=1" class="store-badge" target="_blank" rel="noopener">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
-                    </a>
-                </div>
+      <div class="apps-grid">
+        <div class="app-card">
+          <div class="app-content">
+            <div class="app-logo">
+              <img
+                src="https://play-lh.googleusercontent.com/NwyaOed-PkCeQTjPtVj1I7zG62GM6DydMEllmFa0b9XXj2BlN_TraAVYO-V7wIe2wxOdKFVBklnFgoj_mtf0gdY=w512-rw"
+                alt="Skill Sudoku App Icon"
+              />
             </div>
-        </div>
-        <br>
-        <h3>Coming Soon...</h3><br>
-        <div class="apps-grid">
-            <div class="app-card">
-                <div class="app-content">
-                    <div class="app-logo">
-                        <img src="https://placehold.co/512x512?text=?">
-                    </div>
-                    <div class="app-title">Rapid Reader</div>
-                    <p class="app-desc">
-                        Train your brain with RSVP (Rapid Serial Visual Presentation) — words flash one-by-one to boost reading speed and comprehension. Read articles, books, PDFs faster without losing focus. Minimal design, offline support.
-                    </p>
-                    <a href="" class="store-badge" target="_blank" rel="noopener">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- About Section -->
-        <div style="margin-top: 30px; border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent);">
-            <h2 id="about-us">About Everest Puzzles</h2>
-            <p style="max-width: 700px; margin: 0 auto 2rem; text-align: center; color: var(--text-sec); font-size: 1.1rem;">
-                Hi, I'm the solo developer behind Everest Puzzles. I create minimal, mindful mobile experiences—no interrupting ads, no unnecessary features, just beautifully simple apps and games.
-                Inspired by classic puzzles, every app is designed for deep concentration, mental clarity, and pure focus.
+            <div class="app-title">Skill Sudoku</div>
+            <p class="app-desc">
+              Classic Sudoku in a clean, distraction-free design, built for
+              deep focus and flow state.
             </p>
+            <div class="app-screenshot-container">
+            <div class="app-screenshot-grid">
+              <div class="app-screenshot">
+                <img
+                  src="https://play-lh.googleusercontent.com/mdUcGEPUgM1mJXJxhR2XV_RYFXEG4l9vpWkGyEtZmDdzyHCvKEciwUzfQ_eGHFE0a64Ru9lBirCX3XklvKDR=w1052-h592-rw"
+                  alt="Skill Sudoku Activity Screen Image"
+                />
+              </div>
+              <div class="app-screenshot">
+                <img
+                  src="https://play-lh.googleusercontent.com/xqq74ktHTslGBweRU2ZRpNQcc-37nGCqCHQ4YUYA-iKBwNVeUKY60aRuMS9HL2DTSWZbb1Y4fVYny5gG_fSs=w1052-h592-rw"
+                  alt="Skill Sudoku Home Screen Image"
+                />
+              </div>
+              <div class="app-screenshot">
+                <img
+                  src="https://play-lh.googleusercontent.com/rAgiMSFQ7FAYNxkguWkNg-zYeDOTkd55LLJfR-Xi64TnRB0S3By59lv-Bk7RWJJC2Nfcs2zmusudYTxvt11YVOk=w1052-h592-rw"
+                  alt="Skill Sudoku How To Play Screen Image"
+                />
+              </div>
+              <div class="app-screenshot">
+                <img
+                  src="https://play-lh.googleusercontent.com/2ImYkgoFRXlmTk5ZDJGWsh2_id8fmQ3IhZLGK776kxwefyWp1FAGk0PCsTkwO4BDaafygyQjIemBRr_m9c94=w1052-h592-rw"
+                  alt="Skill Sudoku 6x6 Game Image"
+                />
+              </div>
+              <div class="app-screenshot">
+                <img
+                  src="https://play-lh.googleusercontent.com/R0bIRF1PtXZUwcFwQUTJoilBbEOMFPMZEliZqxEdVAjClbCQVAEvkz2GxAoPGWyF36Sn5YFexMH8KRgacfNsFvE=w1052-h592-rw"
+                  alt="Skill Sudoku 9x9 Game Image"
+                />
+              </div>
+              <div class="app-screenshot">
+                <img
+                  src="https://play-lh.googleusercontent.com/M2uWXkJLlSu1kTgsUp5h_Stbj4gVOsQosqHeoVAJZ5z8ZrvbBXeSahBjFNcKKO2al55_0vgHYyz46jvFEyKCrw=w1052-h592-rw"
+                  alt="Skill Sudoku Settings Screen Image"
+                />
+              </div>
+              <div class="app-screenshot">
+                <img
+                  src="https://play-lh.googleusercontent.com/GKgKNWSjOwTeJhVD7-9cJlDQm1c4vz-wJnft5Q41sDm1s-0YUTk3E5IltFXQPQoexEH9VC1YWm05jCG33aluWg=w1052-h592-rw"
+                  alt="Skill Sudoku Statistics Screen Image"
+                />
+              </div>
+              <div class="app-screenshot">
+                <img
+                  src="https://play-lh.googleusercontent.com/rxCJkZ5RikZI3qdiNX8VPWnEG3ZbGLZ4VU8HW9ybby2rVe3NgZD9rQ9IFHX0nVM6oqOUQxvdyE1A8xBVsuQSIw=w1052-h592-rw"
+                  alt="Skill Sudoku Sudoku History Screen Image"
+                />
+              </div>
+            </div>
+              <div class="screenshot-nav-button" style="left: -100px" onclick="previousImage()"><i class="ph-bold ph-caret-double-left"></i></div>
+              <div class="screenshot-nav-button" style="right: -100px" onclick="nextImage()"><i class="ph-bold ph-caret-double-right"></i></div>
+            </div>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.krish.skillsudoku&hl=en_GB&pli=1"
+              class="store-badge"
+              target="_blank"
+              rel="noopener"
+            >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Get it on Google Play"
+            />
+            </a>
+          </div>
         </div>
+      </div>
+      <br />
+      <h3>Coming Soon...</h3>
+      <br />
+      <div class="apps-grid">
+        <div class="app-card">
+          <div class="app-content">
+            <div class="app-logo">
+              <img src="https://placehold.co/512x512?text=?" />
+            </div>
+            <div class="app-title">Rapid Reader</div>
+            <p class="app-desc">
+              Train your brain with RSVP (Rapid Serial Visual Presentation) —
+              words flash one-by-one to boost reading speed and comprehension.
+              Read articles, books, PDFs faster without losing focus. Minimal
+              design, offline support.
+            </p>
+            <a href="" class="store-badge" target="_blank" rel="noopener">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Get it on Google Play"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+    <div>
+      <div
+        style="
+          margin-top: 30px;
+          border-top: 1px solid var(--accent);
+          border-bottom: 1px solid var(--accent);
+        "
+      >
+        <h2 id="about-us">About Everest Puzzles</h2>
+        <p
+          style="
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            text-align: center;
+            color: var(--text-sec);
+            font-size: 1.1rem;
+          "
+        >
+          Hi, I'm the solo developer behind Everest Puzzles. I create minimal,
+          mindful mobile experiences—no interrupting ads, no unnecessary
+          features, just beautifully simple apps and games. Inspired by classic
+          puzzles, every app is designed for deep concentration and pure focus.
+        </p>
+      </div>
     </div>
-
-
 
     <footer id="contact-us">
-        <p>Contact Us at<br><strong>Everest Puzzles</strong><br>
-            <a href="mailto:krl.developer1@gmail.com">krl.developer1@gmail.com</a>
-        </p>
+      <p>
+        Contact Us at<br/ ><strong>Everest Puzzles</strong><br />
+        <a href="mailto:krl.developer1@gmail.com">krl.developer1@gmail.com</a>
+      </p>
     </footer>
     <div class="navbar">
-        <ul>
-            <li>
-                <p>Everest<span style="color: var(--accent)"> Puzzles</span></p>
-            </li>
-            <li><a href="#featured-apps">Featured Apps</a></li>
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#contact-us">Contact Us</a></li>
-        </ul>
+      <ul>
+        <li>
+          <p>Everest<span style="color: var(--accent)"> Puzzles</span></p>
+        </li>
+        <li><a href="#featured-apps">Featured Apps</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
     </div>
-</body>
-
+    <script src="screenshot-carousel-script.js"></script>
+  </body>
 </html>
