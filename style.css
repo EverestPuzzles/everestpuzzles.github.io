@@ -189,7 +189,7 @@ h3 {
   height: 90px;
 
   transition:
-    transform 0.15s ease,
+    transform 0.08s ease,
     background-color 0.2s ease,
     box-shadow 0.25s ease;
 
@@ -338,6 +338,10 @@ footer a:hover {
     justify-content: center;
   }
 
+  .navbar {
+    height: 120px;
+  }
+
   .navbar li {
     margin: 0.5rem;
   }
@@ -358,20 +362,6 @@ footer a:hover {
   .navbar p {
     font-size: 1.05rem;
     padding: 0.5rem 0.9rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 3rem 1.2rem 5rem;
-  }
-
-  h1 {
-    font-size: clamp(3rem, 10vw, 5rem);
-  }
-
-  h2 {
-    font-size: 2.4rem;
   }
 
   .app-logo {
