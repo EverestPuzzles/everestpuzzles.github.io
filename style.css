@@ -6,6 +6,8 @@
   --text-sec: #94a3b8;
   --accent: #2dd4bf;
   --accent-dim: #0f766e;
+  --review-gold: #e0b700;
+  --review-gold-dim: #d0a300;
 }
 
 * {
@@ -87,6 +89,16 @@ h3 {
   color: white;
   margin: 4rem 0 2.5rem;
   text-align: center;
+}
+
+h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 4rem 0 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid var(--accent);
 }
 
 .apps-grid {
@@ -330,6 +342,48 @@ footer a:hover {
 .navbar .logo {
   font-weight: bold;
   margin-right: 2rem;
+}
+
+/* Review cards/quote */
+.review-card {
+  background-color: var(--bg);
+  border-radius: 32px;
+  border: 3px solid var(--review-gold);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 4px rgba(224, 183, 0, 0.15);
+  margin: 6px;
+  transition:
+    transform 0.2s ease,
+    border-width 0.2s ease,
+    background-color 0.1s ease;
+}
+
+.review-card:hover {
+  transform: scale(1.06);
+  border-width: 6px;
+  background-color: var(--surface-2);
+}
+
+.review-card .name {
+  color: var(--text-sec);
+  font-size: 1.35rem;
+  margin-left: 30px;
+  margin-top: 8px;
+  float: left;
+}
+
+.review-card .rating {
+  display: flex;
+  justify-content: center;
+  color: #ffdf00;
+  font-size: 2.4rem;
+  clear: both;
+}
+
+.review-card p {
+  color: #ffffff;
+  margin-bottom: 12px;
 }
 
 @media (max-width: 768px) {
