@@ -1,5 +1,5 @@
 let currentImage = 0;
-const totalImages = 8;
+const totalImages = document.querySelectorAll(".app-screenshot").length;
 
 function nextImage() {
   currentImage = (currentImage + 1) % totalImages;
@@ -12,8 +12,8 @@ function previousImage() {
 }
 
 function updateCarousel() {
-  const translate = -currentImage * 12.35;
-  document.documentElement.style.setProperty("--translate-x", `${translate}%`);
+  const translate = -currentImage * 312;
+  document.documentElement.style.setProperty("--translate-x", `${translate}px`);
 }
 
 updateCarousel();
