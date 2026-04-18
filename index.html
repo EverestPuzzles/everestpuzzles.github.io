@@ -24,15 +24,22 @@
     />
   </head>
 
-
   <body>
     <div class="container">
       <header>
         <h1>Everest<span style="color: var(--accent)"> Puzzles</span></h1>
         <p class="tagline">
-          Creating thoughtful apps, games and experiences that help you relax,
-          focus, and sharpen your mind.
+          Creating calming apps and games that help you relax, focus, and
+          sharpen your mind.
         </p>
+        <!-- Call to Action Button -->
+        <a
+          class="cta-button cta-primary"
+          href="https://play.google.com/store/apps/details?id=com.krish.skillsudoku&hl=en_GB&pli=1"
+        >
+          <span class="cta-main">Play Smarter Sudoku Free</span>
+          <span class="cta-subtext">Free · No signup · Play instantly</span>
+        </a>
       </header>
 
       <h2 id="featured-apps">Featured Apps</h2>
@@ -48,57 +55,87 @@
             </div>
             <div class="app-title">Skill Sudoku</div>
             <p class="app-desc">
-              Classic Sudoku in a clean, distraction-free design, built for
-              deep focus and flow state.
+              Classic Sudoku in a clean, distraction-free design, built for deep
+              focus and flow state.
             </p>
+            <p class="app-desc" style="font-size: 1.2rem">
+              Minimal ads · Smooth gameplay · Free forever
+            </p>
+            <a
+              class="cta-primary"
+              href="https://play.google.com/store/apps/details?id=com.krish.skillsudoku&hl=en_GB&pli=1"
+              ><span class="cta-main">Play Now</span></a
+            >
             <h4>Screenshots</h4>
             <div class="app-screenshot-container">
-            <div class="app-screenshot-grid">
-              <div class="app-screenshot">
-                <img
-                  <img src="https://play-lh.googleusercontent.com/4seR6eb0XaaSOPc-oehDUCrwgzE5L5pyx5Hs8DuT1V3Th_sOFHqNfAOSqGzwmDSb-t40oTW-3TN-Sp3zAe58pg=w1052-h592-rw"
-                  alt="Skill Sudoku 6x6 Game Image">
-                />
+              <div class="app-screenshot-grid">
+                <div class="app-screenshot">
+                  <img
+                    src="https://play-lh.googleusercontent.com/4seR6eb0XaaSOPc-oehDUCrwgzE5L5pyx5Hs8DuT1V3Th_sOFHqNfAOSqGzwmDSb-t40oTW-3TN-Sp3zAe58pg=w1052-h592-rw"
+                    alt="Skill Sudoku 6x6 Game Image"
+                  />
+                </div>
+                <div class="app-screenshot">
+                  <img
+                    src="https://play-lh.googleusercontent.com/-CowCU8efrVnyYh8g-Zp0kEtvtSY04-jj2XUZatT33Xrv7MbTbilXRYpi5kYKTerEjPKrJPXtPns1HKub1Jx4A=w1052-h592-rw"
+                    alt="Skill Sudoku 9x9 Game Image"
+                  />
+                </div>
+                <div class="app-screenshot">
+                  <img
+                    src="https://play-lh.googleusercontent.com/MD5v-p3hxLlmNz7Ep4J3Lo3tFovnkZQCwf0i8tvT0g4oKPkdD2lCwG-Ckh5ZJpGz0meWML_iSMSg0pdImDewGg=w1052-h592-rw"
+                    alt="Skill Sudoku Statistics Screen Image"
+                  />
+                </div>
+                <div class="app-screenshot">
+                  <img
+                    src="https://play-lh.googleusercontent.com/Z6Uj4tebRGMlkJtfRnKTJlHq5G-7U31KKficmnbTHe1cNav3AVFYApk_uNi3leojlfdNY-tIFGrWeiTKStXKJgg=w1052-h592-rw"
+                    alt="Skill Sudoku Home Screen Image"
+                  />
+                </div>
+                <div class="app-screenshot">
+                  <img
+                    src="https://play-lh.googleusercontent.com/X3oJ8Nkr52Q5UJRGbYaxrcTnY-a0HVlsbT6oc5g3G_vVsRQF6T40Z3_EVpRPQHBkyV8zHoq8pT_VXo31HmasIA=w1052-h592-rw"
+                    alt="Skill Sudoku Activity Screen Image"
+                  />
+                </div>
+                <div class="app-screenshot">
+                  <img
+                    src="https://play-lh.googleusercontent.com/Ihvf-KndHTKvL0evKYfzFyz-tIN5BiVo2n39PxoTAIuoJFIEY3XHgnSmoxAH5l_U5FYKxFczgG7nj2GGp8xbTw=w1052-h592-rw"
+                    alt="Skill Sudoku How To Play Screen Image"
+                  />
+                </div>
               </div>
-              <div class="app-screenshot">
-                <img
-                  src="https://play-lh.googleusercontent.com/-CowCU8efrVnyYh8g-Zp0kEtvtSY04-jj2XUZatT33Xrv7MbTbilXRYpi5kYKTerEjPKrJPXtPns1HKub1Jx4A=w1052-h592-rw"
-                  alt="Skill Sudoku 9x9 Game Image"
-                />
+              <div
+                class="screenshot-nav-button"
+                style="left: -50px"
+                onclick="previousImage()"
+              >
+                <i class="ph-bold ph-caret-double-left"></i>
               </div>
-              <div class="app-screenshot">
-                <img
-                  src="https://play-lh.googleusercontent.com/MD5v-p3hxLlmNz7Ep4J3Lo3tFovnkZQCwf0i8tvT0g4oKPkdD2lCwG-Ckh5ZJpGz0meWML_iSMSg0pdImDewGg=w1052-h592-rw"
-                  alt="Skill Sudoku Statistics Screen Image"
-                />
+              <div
+                class="screenshot-nav-button"
+                style="right: -50px"
+                onclick="nextImage()"
+              >
+                <i class="ph-bold ph-caret-double-right"></i>
               </div>
-              <div class="app-screenshot">
-                <img
-                  src="https://play-lh.googleusercontent.com/Z6Uj4tebRGMlkJtfRnKTJlHq5G-7U31KKficmnbTHe1cNav3AVFYApk_uNi3leojlfdNY-tIFGrWeiTKStXKJgg=w1052-h592-rw"
-                  alt="Skill Sudoku Home Screen Image"
-                />
-              </div>
-              <div class="app-screenshot">
-                <img
-                  src="https://play-lh.googleusercontent.com/X3oJ8Nkr52Q5UJRGbYaxrcTnY-a0HVlsbT6oc5g3G_vVsRQF6T40Z3_EVpRPQHBkyV8zHoq8pT_VXo31HmasIA=w1052-h592-rw"
-                  alt="Skill Sudoku Activity Screen Image"
-                />
-              </div>
-              <div class="app-screenshot">
-                <img
-                  src="https://play-lh.googleusercontent.com/Ihvf-KndHTKvL0evKYfzFyz-tIN5BiVo2n39PxoTAIuoJFIEY3XHgnSmoxAH5l_U5FYKxFczgG7nj2GGp8xbTw=w1052-h592-rw"
-                  alt="Skill Sudoku How To Play Screen Image"
-                />
-              </div>
-            </div>
-              <div class="screenshot-nav-button" style="left: -50px" onclick="previousImage()"><i class="ph-bold ph-caret-double-left"></i></div>
-              <div class="screenshot-nav-button" style="right: -50px" onclick="nextImage()"><i class="ph-bold ph-caret-double-right"></i></div>
             </div>
             <div class="carousel-dots"></div>
             <h4>Videos</h4>
             <div class="video-container">
-              <video class="video" width="400" height="585" controls autoplay muted>
-                <source src="videos/skillsudoku-recording.mp4" type="video/mp4">
+              <video
+                class="video"
+                width="400"
+                height="585"
+                controls
+                autoplay
+                muted
+              >
+                <source
+                  src="videos/skillsudoku-recording.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support the video element.
               </video>
             </div>
@@ -108,16 +145,16 @@
               target="_blank"
               rel="noopener"
             >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-              alt="Get it on Google Play"
-            />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Get it on Google Play"
+              />
             </a>
           </div>
         </div>
       </div>
       <br />
-      <h3>Coming Soon...</h3>
+      <h3>In Development</h3>
       <br />
       <div class="apps-grid">
         <div class="app-card">
@@ -143,50 +180,79 @@
       </div>
 
       <!-- About Section -->
-    <div>
-      <div
-        style="
-          margin-top: 30px;
-          border-top: 1px solid var(--accent);
-          border-bottom: 1px solid var(--accent);
-        "
-      >
-        <h2 id="about-us">About Everest Puzzles</h2>
-        <p
+      <div>
+        <div
           style="
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            text-align: center;
-            color: var(--text-sec);
-            font-size: 1.1rem;
+            margin-top: 30px;
+            border-top: 1px solid var(--accent);
+            border-bottom: 1px solid var(--accent);
           "
         >
-          Hi, I'm the solo developer behind Everest Puzzles. I create minimal,
-          mindful mobile experiences—no interrupting ads, no unnecessary
-          features, just beautifully simple apps and games. Inspired by classic
-          puzzles, every app is designed for deep concentration and pure focus.
-        </p>
+          <h2 id="about-us">About Everest Puzzles</h2>
+          <p
+            style="
+              max-width: 700px;
+              margin: 0 auto 2rem;
+              text-align: center;
+              color: var(--text-sec);
+              font-size: 1.1rem;
+            "
+          >
+            Hi, I'm the solo developer behind Everest Puzzles. I create minimal,
+            mindful mobile experiences—no interrupting ads, no unnecessary
+            features, just beautifully simple apps and games. Inspired by
+            classic puzzles, every app is designed for deep concentration and
+            pure focus.
+          </p>
+        </div>
       </div>
+
+      <!-- FIXED CONTENT -->
+      <div class="navbar">
+        <ul>
+          <li>
+            <p>Everest<span style="color: var(--accent)"> Puzzles</span></p>
+          </li>
+          <li><a href="#featured-apps">Featured Apps</a></li>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Back to Top -->
+      <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        <span class="icon"><i class="ph-bold ph-caret-up"></i></span>
+      </button>
+      <script src="screenshot-carousel-script.js"></script>
     </div>
 
+    <!-- Footer -->
     <footer id="contact-us">
-      <p>
-        Contact Us at<br/ ><strong>Everest Puzzles</strong><br />
-        <a href="mailto:krl.developer1@gmail.com">krl.developer1@gmail.com</a>
-      </p>
-      <br >
-      <div style="border-top: 1px solid var(--surface-2);"><p style="margin-top: 6px;">This website uses <a href="phosphoricons.com"></a> (Phosphor Icons) for it's icons, licensed under the MIT license.</p></div>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <p class="footer-title">Everest<span> Puzzles</span></p>
+          <p class="footer-desc">
+            Thoughtful apps for focus, calm, and clarity.
+          </p>
+        </div>
+
+        <div class="footer-contact">
+          <p>Contact</p>
+          <a href="mailto:krl.developer1@gmail.com">
+            krl.developer1@gmail.com
+          </a>
+        </div>
+
+        <div class="footer-meta">
+          <p>© 2026 Everest Puzzles</p>
+          <p class="footer-credit">
+            Icons by
+            <a href="https://phosphoricons.com" target="_blank" rel="noopener"
+              >Phosphor Icons</a
+            >
+          </p>
+        </div>
+      </div>
     </footer>
-    <div class="navbar">
-      <ul>
-        <li>
-          <p>Everest<span style="color: var(--accent)"> Puzzles</span></p>
-        </li>
-        <li><a href="#featured-apps">Featured Apps</a></li>
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#contact-us">Contact Us</a></li>
-      </ul>
-    </div>
-    <script src="screenshot-carousel-script.js"></script>
   </body>
 </html>
