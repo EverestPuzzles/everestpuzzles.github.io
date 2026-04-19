@@ -45,6 +45,8 @@ body {
 
 header {
   position: relative;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   margin-bottom: 5rem;
   padding: 12rem 2rem 12rem;
@@ -115,7 +117,7 @@ h4 {
 
 .apps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 2rem;
 }
 
@@ -238,6 +240,14 @@ h4 {
   transform: scale(0.86);
 }
 
+.nav-left {
+  left: -50px;
+}
+
+.nav-right {
+  right: -50px;
+}
+
 .app-screenshot {
   flex: 0 0 296px;
   height: 526px;
@@ -287,6 +297,7 @@ footer {
   border-top: 1px solid var(--surface-2);
   background: var(--surface);
   margin-bottom: 0;
+  width: 100%;
 }
 
 .footer-content {
@@ -495,6 +506,8 @@ footer {
 
 .video {
   padding: 36px;
+  width: 90%;
+  height: auto;
 }
 
 /* ---  Back to Top Button --- */
@@ -676,6 +689,21 @@ footer {
   }
 }
 
+@media (max-width: 400px) {
+  .nav-left {
+    left: 5px;
+  }
+
+  .nav-right {
+    right: 5px;
+  }
+
+  .screenshot-nav-button {
+    width: 56px;
+    height: 56px;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar ul {
     flex-wrap: wrap;
@@ -692,6 +720,7 @@ footer {
 
   header {
     display: flex;
+    flex-direction: column;
     padding: 8rem 1.5rem 9rem;
 
     align-items: center;
