@@ -1,9 +1,9 @@
 :root {
-  --bg: #0f1115;
-  --surface: #16181f;
-  --surface-2: #1e212b;
-  --accent-dim: #0f766e;
-  --accent: #2dd4bf;
+  --bg: #1e1e2e;
+  --surface: #313244;
+  --surface-2: #45475a;
+  --accent: #f6b666;
+  --accent-dim: #ebab7e;
 
   background-color: var(--bg);
 }
@@ -16,12 +16,7 @@ h1 {
   margin: 4rem 0 2.5rem;
   text-align: center;
 
-  border-bottom: 4px solid var(--accent);
   margin: 28px;
-}
-
-.accent-color {
-  color: var(--accent)
 }
 
 /* Images */
@@ -29,16 +24,13 @@ h1 {
   display: block;
   justify-content: center;
   background: var(--surface);
-  border-radius: 16px;
-  border: 2px solid var(--surface-2);
-  transition: all 0.25s ease;
-  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.4);
-  margin: 12px;
+  overflow: hidden;
+  border: 4px solid var(--surface-2);
+  transition: border-color 0.08s ease;
 }
 
 .images-container:hover {
   border-color: var(--accent-dim);
-  transform: translateY(-10px);
 }
 
 img {
